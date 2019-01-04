@@ -1,0 +1,10 @@
+imports:
+  lighttouch-base: lighttouch-base/
+  lighttouch-keys: packages/lighttouch-keys
+
+git module lighttouch-base:
+  url: https://github.com/foundpatterns/lighttouch-base.git
+  recursive: true
+
+git module lighttouch-keys:
+  url: https://github.com/foundpatterns/lighttouch-keys.git
