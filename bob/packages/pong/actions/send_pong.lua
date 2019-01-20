@@ -13,6 +13,7 @@ return {
   },
   body = json.from_table({
     id = myid,
-    name = myname
+    name = myname,
+    request_headers = request.headers
   })
 }

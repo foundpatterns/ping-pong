@@ -19,6 +19,7 @@ return {
   body = json.from_table({
     id = myid,
     name = myname,
-    pong = response.body
+    pong = response.body,
+    response_headers = response.headers
   })
 }
