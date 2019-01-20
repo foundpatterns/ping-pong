@@ -2,24 +2,23 @@ event = ["ping_requested"]
 priority = 1
 input_parameters = ["request"]
 
---[[local response = client_request.send({
-  method = "GET",
-  uri = "?pong",
-  headers = {},
-  body = ""
-})]]
-
-local pong_response = "Missing"
-
 local myid, myname = keys.get_profile()
 
-local body =
-  "myid: " .. myid ..
-  "\nmyname: " .. myname ..
-  "\npong respone: " .. pong_response
+local response = client_request.send({
+  method = "GET",
+  uri = "http://localhost:3001/?pong",
+  headers = {},
+  body = ""
+})
 
 return {
   status = 200,
-  headers = {},
-  body = body
+  headers = {
+    ["content-type"] = "application/json",
+  },
+  body = json.from_table({
+    id = myid,
+    name = myname,
+    pong = response.body
+  })
 }

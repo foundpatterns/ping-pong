@@ -1,9 +1,9 @@
 priority = 1
 input_parameter = "request"
-events_table = ["ping_requested"]
+events_table = ["pong_requested"]
 
 request.method == "GET"
 and
 #request.path_segments == 0
 and
-request.query.ping
+request.query.pong
